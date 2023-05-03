@@ -1,9 +1,9 @@
 <form>
 <table border="1" width="15%">
 <tr>
-  <th>No</th>
-  <th>Nama</th>
- <th>Kelas</th>
+  <th bgcolor="lightblue">No</th>
+	<th bgcolor="lightblue">Nama</th>
+	<th bgcolor="lightblue">Kelas</th>
  </tr>
 <?php 
     for ($no = 1, $i=1, $a=10; $i<=10, $a>0 ; $i++, $a--) { 
