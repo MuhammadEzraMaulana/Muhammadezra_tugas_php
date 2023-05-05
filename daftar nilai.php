@@ -33,7 +33,7 @@ $json = Json_decode($json_string, True);
         $alamat = $row ['nilai'];
         $umur   = $row ['umur'];
     // ternary
-    $ukuran = ($row['umur'] % 2 == 0) ? 'bg-warning' : 'bg-info' ;
+    $umur = ($row['umur'] % 2 == 0) ? 'bg-warning' : 'bg-info' ;
     // Operasi Switch-case membuat rentang nilai
        switch ($row['nilai']) {
        case $row['nilai'] >= 90 && $row['nilai'] <= 100:
@@ -70,7 +70,7 @@ $json = Json_decode($json_string, True);
       $grade = 'NaN';
       break;
  } ?>
-    <tr class="<?= $ukuran ?>">
+    <tr class="<?= $umur ?>">
       <td><?php echo $no++ ?></td>
       <td><?php echo $row['nama'] ?></td>
       <td><?php echo $row['tanggal_lahir'] ?></td>
