@@ -26,14 +26,9 @@ $json = Json_decode($json_string, True);
      // Variable $no berperan sebagai penomoran
      $no = 1;
     foreach ($json as $row) { // Perulangan foreach
-        $tanggal_lahir = new Datetime($row['tanggal_lahir']);
-        $nama = $row['nama'];
-        $alamat = $row ['alamat'];
-        $kelas  = $row ['kelas'];
-        $alamat = $row ['nilai'];
-        $umur   = $row ['umur'];
-    // ternary
-    $umur = ($row['umur'] % 2 == 0) ? 'bg-warning' : 'bg-info' ;
+         $lahir = new DateTime($row['tanggal_lahir']);
+         $today = new DateTime();
+         $Umur = $today->diff($lahir);
     // Operasi Switch-case membuat rentang nilai
        switch ($row['nilai']) {
        case $row['nilai'] >= 90 && $row['nilai'] <= 100:
@@ -70,11 +65,11 @@ $json = Json_decode($json_string, True);
       $grade = 'NaN';
       break;
  } ?>
-    <tr class="<?= $umur ?>">
+    <tr>
       <td><?php echo $no++ ?></td>
       <td><?php echo $row['nama'] ?></td>
       <td><?php echo $row['tanggal_lahir'] ?></td>
-      <td><?php echo $row['umur'] ?> Tahun</td>
+      <td><?php echo $Umur->y;echo "tahun"; ?></td>
       <td><?php echo $row['alamat'] ?></td>
       <td><?php echo $row['kelas'] ?></td>
       <td class="text-center"><?= number_format($row['nilai']) ?></td>
